@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, TouchableOpacity, TextInput, Alert, ActivityIndicator, AsyncStorage } from "react-native";
+import { StyleSheet, TouchableOpacity, TextInput, Alert, ActivityIndicator, AsyncStorage, Image } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import { Text, View } from "../components/Themed";
 import api from '../services/api';
+
+import logo from '../assets/getempreenda.png'
 
 type User = {
   _id: string,
@@ -49,6 +51,7 @@ export default function LoginScrenn() {
   };
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={logo} />
       <Text style={styles.title}>Login</Text>
       <View
         style={styles.separator}
@@ -142,4 +145,8 @@ const styles = StyleSheet.create({
   sublime: {
     color: "#0000ff",
   },
+  image: {
+   height: 50,
+   width: 180
+  }
 });
